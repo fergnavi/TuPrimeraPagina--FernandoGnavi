@@ -1,0 +1,15 @@
+{% extends 'tienda/base.html' %}
+{% block contenido %}
+    <h2>Lista de Clientes</h2>
+    <a href="{% url 'crear_cliente' %}">Crear nuevo cliente</a>
+    <ul>
+        {% for cliente in clientes %}
+            <li>
+                Nombre: {{ cliente.nombre }}<br>
+                Email: {{ cliente.email }}<br>
+                <a href="{% url 'editar_cliente' cliente.pk %}">Editar</a> |
+                <a href="{% url 'eliminar_cliente' cliente.pk %}">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

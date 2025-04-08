@@ -1,0 +1,22 @@
+{% extends "tienda/base.html" %}
+
+{% block contenido %}
+<h2>Iniciar Sesión</h2>
+
+{% if form.errors %}
+    <p style="color:red;">Usuario o contraseña incorrectos.</p>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    <p>
+        <label for="username">Usuario:</label>
+        {{ form.username }}
+    </p>
+    <p>
+        <label for="password">Contraseña:</label>
+        {{ form.password }}
+    </p>
+    <button type="submit">Entrar</button>
+</form>
+{% endblock %}

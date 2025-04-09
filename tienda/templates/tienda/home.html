@@ -1,4 +1,10 @@
 {% extends 'tienda/base.html' %}
-{% block contenido %}
+{% load static %}
+
+{% block content %}
     <h2>Bienvenido a la tienda</h2>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="{% static 'img/banner.jpg' %}" alt="Banner de la tienda" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    </div>
 {% endblock %}

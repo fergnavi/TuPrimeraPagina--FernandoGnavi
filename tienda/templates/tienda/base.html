@@ -67,6 +67,8 @@
 </head>
 <body>
     <h1>Mi Tienda</h1>
+   
+    
     <nav>
         <div class="nav-links">
             <a href="{% url 'home' %}">Inicio</a>
@@ -74,6 +76,8 @@
             <a href="{% url 'lista_productos' %}">Productos</a>
             <a href="{% url 'lista_clientes' %}">Clientes</a>
             <a href="{% url 'about' %}">Acerca de</a>
+            
+
         </div>
         <div class="nav-auth">
             {% if user.is_authenticated %}
@@ -90,11 +94,10 @@
                 <p style="color: green;">{{ message }}</p>
             {% endfor %}
         {% endif %}
-        {% block contenido %}{% endblock %}
+        {% block content %}{% endblock %}
+       
+
     </div>
 
-    <div class="banner">
-        <img src="{% static 'img/banner.png' %}" alt="Banner">
-    </div>
 </body>
 </html>
